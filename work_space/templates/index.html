@@ -1,0 +1,36 @@
+<!-- <html>
+<body>
+
+<h1>Show File-select Fields</h1>
+
+<h3>Show a file-select field which allows only one file to be chosen:</h3>
+<form action="{% url 'index' %}" method="post" enctype="multipart/form-data">
+  <label for="myfile">Select a file:</label>
+  <input type="file" id="myfile" name="myfile"/><br><br>
+  <!-- {% load static %} 
+  <img src="{% static 'myfile' %}"/> -->
+ 
+  <!-- <input type="submit" value="upload"/>
+</form>
+<!-- {{myfile}} -->
+<!-- {{count}}
+</body>
+</html> --> 
+{% load static %}
+<html>
+<style>
+</style>
+<body>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="myfile" />
+    <input type="submit" name="submit" value="Upload" />
+</form>
+<div class="cat">
+    <img src = "/static/img/{{image}}" width="250px" height="250px">
+</div>
+<div>
+    <h3>Count of cat is {{number}}</h3>
+</div>
+</body>
+</html>
