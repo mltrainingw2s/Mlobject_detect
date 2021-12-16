@@ -1,0 +1,22 @@
+{% load static %}
+<html>
+<head>
+    <title>titless</title>
+</head>
+<style>
+</style>
+<body>
+<form method="post" enctype="multipart/form-data" action="{% url 'index' %}">
+    {% csrf_token %}
+    <input type="file" name="image" />
+    <input type="submit" name="submit" value="Upload" />
+</form>
+<h3>Total cars in the image are {{predict}}</h3>
+
+
+<div>
+ <img src="/static/images/{{image}}" width="500px" height="500px">
+</div>
+
+</body>
+</html>
