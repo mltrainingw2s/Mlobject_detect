@@ -1,0 +1,19 @@
+
+{% load static %}
+<html>
+<style>
+</style>
+<body>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="myfile" />
+    <input type="submit" name="submit" value="Upload" />
+</form>
+<div class="cat">
+    <img src = "/static/image/{{image}}" width="500px" height="500px">
+</div>
+<div>
+    <h3>Dog count is {{number}}</h3>
+</div>
+</body>
+</html>
